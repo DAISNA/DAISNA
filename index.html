@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisna - Bolsas TOUS de Lujo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <style>
+        :root {
+           --rose-light: #f6ddf6;
+            --rose-medium: #F283AF;
+            --rose-dark: #e06bd5;
+            --lavender: #fde2fc;
+            --pastel-blue: #31292f;
+            --pastel-yellow: #F3CC97;
+            --white: #FFFFFF;
+            --gray-light: #FBFAEB;
+            --gray-dark: #888888;
+            --black: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--rose-light) 0%, var(--lavender) 50%, var(--pastel-blue) 100%);
+            background-attachment: fixed;
+            color: var(--gray-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--black);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation */
+        nav {
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose-dark);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--rose-dark), var(--pastel-blue));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: var(--black);
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--rose-dark);
+            transform: translateY(-3px);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--black);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/BOLSAS.png') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--rose-dark);
+            color: var(--rose-dark);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            color: var(--white);
+        }
+
+        /* Featured Products */
+        .featured {
+            padding: 5rem 2rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            margin: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--black);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--rose-dark), var(--pastel-blue));
+        }
+
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .quick-view {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .quick-view {
+            opacity: 1;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .product-material {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+            margin-bottom: 0.5rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            background-color: var(--rose-light);
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--rose-dark);
+            font-size: 1.2rem;
+        }
+
+        .add-to-cart {
+            background: linear-gradient(135deg, var(--rose-dark) 0%, var(--pastel-blue) 100%);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.1);
+        }
+
+        /* Swiper Carousel */
+        .swiper {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 2rem;
+            color: white;
+            text-align: left;
+        }
+
+        .swiper-slide-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .swiper-slide-content p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--rose-dark);
+        }
+
+        /* Product Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-container {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--black);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background-color: var(--rose-dark);
+            color: var(--white);
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-images {
+            display: flex;
+            position: relative;
+        }
+
+        .thumbnail-container {
+            width: 80px;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            background-color: var(--gray-light);
+        }
+
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .thumbnail.active {
+            border-color: var(--rose-dark);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-image {
+            flex: 1;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: var(--white);
+        }
+
+        .main-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-details {
+            padding: 2rem;
+            background-color: var(--white);
+        }
+
+        .modal-details h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .modal-price {
+            font-size: 1.8rem;
+            color: var(--rose-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+
+        .modal-material {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--rose-light);
+            color: var(--rose-dark);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            color: var(--black);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--rose-dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--rose-dark), var(--pastel-blue));
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--gray-dark);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--rose-dark);
+            transform: translateX(5px);
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            margin-right: 0.8rem;
+            color: var(--rose-dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .modal-content {
+                flex-direction: column;
+            }
+
+            .modal-images {
+                flex-direction: column-reverse;
+            }
+
+            .thumbnail-container {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+                padding: 1rem;
+            }
+
+            .thumbnail {
+                min-width: 60px;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+
+            .main-image {
+                height: 300px;
+            }
+
+            .swiper {
+                height: 300px;
+            }
+
+            .swiper-slide-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+
+            .swiper-slide-content {
+                padding: 1rem;
+            }
+
+            .swiper-slide-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .swiper-slide-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            .featured {
+                margin: 1rem;
+                padding: 3rem 1rem;
+            }
+
+            .swiper {
+                height: 250px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                DAISNA
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="social-icons">
+                <a href="https://www.instagram.com/_daisna_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/da.aleman.58" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content fade-in">
+            <h1 class="slide-up">Bolsas <span>TOUS</span> de Colección</h1>
+            <p class="slide-up">Descubre nuestra exclusiva colección de bolsas TOUS, elegancia y estilo en cada diseño.</p>
+            <div class="btn-group slide-up">
+                <a href="#productos" class="btn">Ver Colección</a>
+                <a href="#contacto" class="btn btn-outline">Contacto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured" id="productos">
+        <div class="featured-container">
+            <div class="section-title">
+                <h2>Nuestras Bolsas TOUS</h2>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/TOUS_AZUL_1.png" alt="Bolsa TOUS Azul">
+                        <div class="product-overlay"></div>
+                        <a href="#" class="quick-view" data-id="1">Vista Rápida</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolsa TOUS Azul</h3>
+                        <span class="product-material">Piel sintetica</span>
+                        <div class="product-price">
+                            <span class="price">$800</span>
+                            <a href="https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20la%20Bolsa%20TOUS%20Azul" class="add-to-cart" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/TOUS_Cafe_1.png" alt="Bolsa TOUS Negra">
+                        <div class="product-overlay"></div>
+                        <a href="#" class="quick-view" data-id="2">Vista Rápida</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolsa TOUS Cafe</h3>
+                        <span class="product-material">Piel sintética</span>
+                        <div class="product-price">
+                            <span class="price">$800</span>
+                            <a href="https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20la%20Bolsa%20TOUS%20Negra" class="add-to-cart" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/TOUS_ROJA_1.png" alt="Bolsa TOUS Roja">
+                        <div class="product-overlay"></div>
+                        <a href="#" class="quick-view" data-id="3"  >Vista Rápida</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolsa TOUS Roja</h3>
+                        <span class="product-material">Piel sintética</span>
+                        <div class="product-price">
+                            <span class="price">$800</span>
+                            <a href="https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20la%20Bolsa%20TOUS%20Roja" class="add-to-cart" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/TOUS_negra_1.png" alt="Bolsa TOUS Azul">
+                        <div class="product-overlay"></div>
+                        <a href="#" class="quick-view" data-id="4">Vista Rápida</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolsa TOUS negra</h3>
+                        <span class="product-material">Piel sintetica</span>
+                        <div class="product-price">
+                            <span class="price">$800</span>
+                            <a href="https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20la%20Bolsa%20TOUS%20Azul" class="add-to-cart" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/TOUS_blanca_1.png" alt="Bolsa TOUS Blanca">
+                        <div class="product-overlay"></div>
+                        <a href="#" class="quick-view" data-id="5">Vista Rápida</a>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bolsa TOUS blanca</h3>
+                        <span class="product-material">Piel sintética</span>
+                        <div class="product-price">
+                            <span class="price">$800</span>
+                            <a href="https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20la%20Bolsa%20TOUS%20Roja" class="add-to-cart" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </center>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-container">
+            <div class="modal-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-content">
+                <div class="modal-images">
+                    <div class="thumbnail-container">
+                        <div class="thumbnail active">
+                            <img src="" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="" alt="Thumbnail 3">
+                        </div>
+                    </div>
+                    <div class="main-image">
+                        <img src="" alt="Product Image">
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2>Bolsa TOUS Azul</h2>
+                    <div class="modal-price">$800</div>
+                    <span class="modal-material">Piel sintética</span>
+                    <p class="modal-description">
+                        Esta elegante bolsa TOUS en color azul es perfecta para cualquier ocasión. Con un diseño clásico y atemporal, esta bolsa añadirá un toque de sofisticación a tu estilo. Hecha con materiales de alta calidad para garantizar durabilidad y elegancia duradera. Incluye el icónico charm de oso TOUS en oro laminado.
+                    </p>
+                    <div class="modal-actions">
+                        <a href="https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20la%20Bolsa%20TOUS%20Azul" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                        <button class="btn btn-outline">Agregar a favoritos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>DAISNA</h3>
+                <p>Bolsas TOUS de alta calidad con los mejores materiales y diseños exclusivos.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_daisna_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/da.aleman.58" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/529221892234" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Información</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Política de Envíos</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+529221892234">922 189 2234</a>
+                    </li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Coatzacoalcos, Veracruz</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Daisna. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Product Modal
+        const modal = document.getElementById('productModal');
+        const quickViewButtons = document.querySelectorAll('.quick-view');
+        const modalClose = document.querySelector('.modal-close');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+
+        // Sample product data
+        const products = {
+            1: {
+                name: "Bolsa TOUS Azul",
+                price: "$800",
+                material: "Piel sintética",
+                description: "Esta elegante bolsa TOUS en color azul es perfecta para cualquier ocasión. Con un diseño clásico y atemporal, esta bolsa añadirá un toque de sofisticación a tu estilo. Hecha con materiales de alta calidad para garantizar durabilidad y elegancia duradera. Incluye el icónico charm de oso TOUS en oro laminado.",
+                images: [
+                    "images/TOUS_azul.jpg",
+                    "images/TOUS_AZUL_2.png",
+                    "images/tous_azul_model.png"
+                ]
+            },
+            2: {
+                name: "Bolsa TOUS Cafe",
+                price: "$800",
+                material: " Piel sintética",
+                description: "Bolsa TOUS cafe de diseño elegante y moderno. Perfecta para ocasiones formales y eventos especiales. Fabricada con cuero ecológico de alta calidad y con el característico oso TOUS en detalles dorados.",
+                images: [
+                    "images/TOUS_Cafe.jpg",
+                    "images/TOUS_Cafe_2.png",
+                    "images/TOUS_CAFE_MODELO.png"
+                ]
+            },
+             3: {
+                name: "Bolsa TOUS Roja",
+                price: "$800",
+                material: "Piel sintética",
+                description: "Esta elegante bolsa TOUS en color rojo es perfecta para cualquier ocasión. Con un diseño clásico y atemporal, esta bolsa añadirá un toque de sofisticación a tu estilo. Hecha con materiales de alta calidad para garantizar durabilidad y elegancia duradera. Incluye el icónico charm de oso TOUS en oro laminado.",
+                images: [
+                    "images/TOUS_roja.jpg",
+                    "images/TOUS_ROJA_2.png",
+                    "images/tous_roja_model.png"
+                ]
+            },
+             4: {
+                name: "Bolsa TOUS Negra",
+                price: "$800",
+                material: "Piel sintética",
+                description: "Esta elegante bolsa TOUS en color negro es perfecta para cualquier ocasión. Con un diseño clásico y atemporal, esta bolsa añadirá un toque de sofisticación a tu estilo. Hecha con materiales de alta calidad para garantizar durabilidad y elegancia duradera. Incluye el icónico charm de oso TOUS en oro laminado.",
+                images: [
+                    "images/TOUS_negra.jpg",
+                    "images/TOUS_NEGRA_2.png",
+                    "images/TOUS_negro_MODELO.png"
+                ]
+            },
+            5: {
+                name: "Bolsa TOUS Blanca",
+                price: "$800",
+                material: "Piel sintética",
+                description: "Esta elegante bolsa TOUS en color blanco es perfecta para cualquier ocasión. Con un diseño clásico y atemporal, esta bolsa añadirá un toque de sofisticación a tu estilo. Hecha con materiales de alta calidad para garantizar durabilidad y elegancia duradera. Incluye el icónico charm de oso TOUS en oro laminado.",
+                images: [
+                    "images/TOUS_blanca.jpg",
+                    "images/TOUS_BLANCA_2.png",
+                    "images/tous_blanca_model.jpg"
+                ]
+            },
+            // Add more products as needed
+        };
+
+        // Open modal when quick view button is clicked
+        quickViewButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productId = button.getAttribute('data-id');
+                const product = products[productId] || products[1]; // Fallback to first product if not found
+                
+                // Update modal content
+                document.querySelector('.modal-details h2').textContent = product.name;
+                document.querySelector('.modal-price').textContent = product.price;
+                document.querySelector('.modal-material').textContent = product.material;
+                document.querySelector('.modal-description').textContent = product.description;
+                
+                // Update WhatsApp link
+                const whatsappBtn = document.querySelector('.btn-whatsapp');
+                whatsappBtn.href = `https://wa.me/529221892234?text=Hola,%20estoy%20interesado%20en%20el%20producto%20${encodeURIComponent(product.name)}`;
+                
+                // Update images
+                mainImage.src = product.images[0];
+                thumbnails.forEach((thumb, index) => {
+                    if (product.images[index]) {
+                        thumb.querySelector('img').src = product.images[index];
+                        thumb.style.display = 'block';
+                    } else {
+                        thumb.style.display = 'none';
+                    }
+                });
+                
+                // Reset thumbnail active state
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                thumbnails[0].classList.add('active');
+                
+                // Show modal
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Change main image when thumbnail is clicked
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                mainImage.src = thumb.querySelector('img').src;
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes when scrolling
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.slide-up, .fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 1s ease';
+        });
+
+        // Trigger animations when page loads
+        window.addEventListener('load', animateOnScroll);
+        
+        // Trigger animations when scrolling
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
