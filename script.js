@@ -1,1 +1,0 @@
-console.log('DAISNA script cargado');
