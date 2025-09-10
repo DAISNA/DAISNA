@@ -1,1 +1,0 @@
-Proyecto DAISNA - Estructura básica de tienda online. Reemplaza los archivos según tus necesidades.
